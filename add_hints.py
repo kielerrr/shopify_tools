@@ -27,7 +27,9 @@ def get_list_of_files(starting_dir):
             all_files = all_files + get_list_of_files(full_path)
         else:
             if '.liquid' in full_path:
-                all_files.append(full_path)
+                if 'js.liquid' not in full_path:
+                    if 'css.liquid' not in full_path:
+                            all_files.append(full_path)
 
     return all_files
 
@@ -84,5 +86,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
-   
